@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>BA NEXORA AI | Project Showcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: #000000;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-panel:hover {
+            border-color: #00e5ff;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        /* Custom scrollbar for modal */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(0, 229, 255, 0.3);
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 229, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-[#131313] selection:bg-[#00e5ff] selection:text-[#00626e]">
+    <!-- Top Navigation -->
+    <header class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl border-b border-[#00e5ff]/20">
+        <nav class="flex justify-between items-center px-4 md:px-8 py-4 w-full mx-auto">
+            <div class="flex items-center gap-2">
+                <img src="assets/logo.png" alt="BA Nexora AI Logo" class="h-8 w-8 md:h-10 md:w-10 object-contain rounded-lg shadow-[0_0_10px_rgba(0,229,255,0.2)]">
+                <span class="font-['Space_Grotesk'] text-2xl tracking-tighter text-[#00e5ff] font-bold">BA NEXORA AI</span>
+            </div>
+            <a href="index.html" class="text-sm font-bold text-[#bac9cc] hover:text-[#00e5ff] transition-colors flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full border border-white/10 hover:border-[#00e5ff]/50">
+                <span class="material-symbols-outlined text-sm">home</span> Back to Home
+            </a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 pt-32 pb-12 px-4 md:px-8 w-full mx-auto w-full">
+        <div class="text-center mb-16">
+            <h1 class="font-['Space_Grotesk'] text-4xl md:text-5xl text-white font-bold mb-4">Project Showcase</h1>
+            <p class="text-[#849396] max-w-2xl mx-auto">A collection of our recent experiments, demonstrations, and deployments. We are constantly building the future.</p>
+        </div>
+
+        <!-- Projects Grid -->
+        <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Rendered by JS -->
+        </div>
+    </main>
+
+    <!-- Project Details Modal -->
+    <div id="project-modal" class="fixed inset-0 z-[60] bg-black/90 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6">
+        <div class="glass-panel bg-[#1c1b1b] max-w-4xl w-full max-h-[90vh] rounded-2xl flex flex-col transform scale-95 transition-transform duration-300" id="project-modal-wrapper">
+            <!-- Modal Header -->
+            <div class="p-6 border-b border-white/10 flex justify-between items-center sticky top-0 bg-[#1c1b1b] z-10 rounded-t-2xl">
+                <div>
+                    <span id="modal-category" class="text-[#00e5ff] text-xs font-bold tracking-widest uppercase mb-1 block"></span>
+                    <h3 id="modal-title" class="font-['Space_Grotesk'] text-2xl md:text-3xl text-white font-bold"></h3>
+                </div>
+                <button onclick="closeProjectModal()" class="text-[#849396] hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            
+            <!-- Modal Body (Scrollable) -->
+            <div class="p-6 overflow-y-auto flex-1 custom-scrollbar">
+                <p id="modal-description" class="text-[#e5e2e1] text-lg mb-8 leading-relaxed"></p>
+                
+                <h4 class="text-white font-bold text-xl mb-4 font-['Space_Grotesk']">Media Gallery</h4>
+                <div id="modal-gallery" class="grid grid-cols-1 gap-6">
+                    <!-- Media items injected via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // DEVELOPER NOTE: Add new projects to this array to automatically display them.
+        // You can add as many items to the 'media' array as you want (images or videos).
+        const projectsData = [
+            {
+                id: "smartbusiness",
+                name: "SmartBusiness",
+                category: "AI Automation",
+                description: "An autonomous AI system built for supply chain optimization. SmartBusiness integrates predictive demand monitoring and self-learning logistics routing, automating stock management and vendor communication for wholesale distributors.",
+                media: [
+                    { type: "image", url: "assets/projects/smartbusiness.png" }
+                ]
+            },
+            {
+                id: "quickshop",
+                name: "QuickShop",
+                category: "Web Development",
+                description: "A high-speed serverless e-commerce platform optimized for large retail stores. Built with React and Next.js, QuickShop features instant digital payment integrations and automated catalog updates, guaranteeing sub-second load times under peak traffic.",
+                media: [
+                    { type: "image", url: "assets/projects/quickshop.png" }
+                ]
+            },
+            {
+                id: "fitlife",
+                name: "FitLife",
+                category: "Mobile Apps",
+                description: "A state-of-the-art mobile application utilizing advanced on-device computer vision models. FitLife tracks and analyzes exercise postures in real time using a standard phone camera, offering interactive voice coaching and personalized metrics.",
+                media: [
+                    { type: "image", url: "assets/projects/fitlife.png" }
+                ]
+            },
+            {
+                id: "citydata",
+                name: "CityData",
+                category: "Dashboards",
+                description: "A real-time glassmorphic control dashboard developed for Smart City IoT grids. CityData visualizes traffic congestion, electricity grid loads, water supply metrics, and public safety data for urban operations centers.",
+                media: [
+                    { type: "image", url: "assets/projects/citydata.png" }
+                ]
+            },
+            {
+                id: "smartchat",
+                name: "SmartChat",
+                category: "AI Chatbots",
+                description: "A highly intelligent, context-aware customer service chatbot fluent in multiple languages. SmartChat is optimized for modern retail brands and customer service helpdesks, resolving up to 90% of user inquiries automatically.",
+                media: [
+                    { type: "image", url: "assets/projects/smartchat.png" }
+                ]
+            },
+            {
+                id: "databridge",
+                name: "DataBridge",
+                category: "API Integrations",
+                description: "A security-hardened enterprise gateway bridging legacy databases and central accounting systems with modern LLMs and generative AI services, featuring automatic data masking and real-time transit logs.",
+                media: [
+                    { type: "image", url: "assets/projects/databridge.png" }
+                ]
+            },
+            {
+                id: "foodexpress",
+                name: "FoodExpress",
+                category: "Restaurant App",
+                description: "A premium restaurant ordering and table reservation web application designed for food brands. FoodExpress features an interactive digital menu, smart order tracking, and an integrated AI assistant to handle delivery coordination via messaging platforms.",
+                media: [
+                    { type: "image", url: "assets/projects/foodexpress.png" }
+                ]
+            },
+            {
+                id: "groceryai",
+                name: "GroceryAI",
+                category: "Local Business AI",
+                description: "AI-driven stock assistant and automatic catalog manager designed for local retail shops. GroceryAI allows store owners to record audio messages to dynamically update their inventory levels and customer pricing.",
+                media: [
+                    { type: "image", url: "assets/projects/groceryai.png" }
+                ]
+            }
+        ];
+
+        const container = document.getElementById('projects-grid');
+        const projectModal = document.getElementById('project-modal');
+        const projectModalWrapper = document.getElementById('project-modal-wrapper');
+
+        // Render Cards
+        projectsData.forEach(project => {
+            const card = document.createElement('div');
+            card.className = 'glass-panel rounded-2xl overflow-hidden flex flex-col group cursor-pointer';
+            card.onclick = () => openProjectModal(project.id);
+            
+            // Thumbnail uses the first media item
+            const thumbnail = project.media[0];
+            let mediaHTML = '';
+            
+            if (thumbnail) {
+                if (thumbnail.type === 'video') {
+                    mediaHTML = `<video src="${thumbnail.url}" autoplay loop muted playsinline class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 group-hover:scale-105 transform"></video>`;
+                } else {
+                    mediaHTML = `<img src="${thumbnail.url}" alt="${project.name}" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 group-hover:scale-105 transform">`;
+                }
+            } else {
+                mediaHTML = `<div class="w-full h-full bg-[#1c1b1b] flex items-center justify-center text-[#849396]"><span class="material-symbols-outlined text-4xl">image_not_supported</span></div>`;
+            }
+
+            card.innerHTML = `
+                <div class="aspect-video w-full relative bg-black border-b border-white/10 overflow-hidden">
+                    ${mediaHTML}
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#131313] via-transparent to-transparent"></div>
+                    <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-white flex items-center gap-1 border border-white/10">
+                        <span class="material-symbols-outlined text-[14px]">photo_library</span> ${project.media.length}
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col">
+                    <span class="text-[#00e5ff] text-xs font-bold tracking-widest uppercase mb-2">${project.category}</span>
+                    <h3 class="text-xl text-white font-bold mb-3 font-['Space_Grotesk'] group-hover:text-[#00e5ff] transition-colors">${project.name}</h3>
+                    <p class="text-[#849396] text-sm flex-1 line-clamp-2">${project.description}</p>
+                    <button class="mt-6 flex items-center gap-2 text-white font-bold group-hover:text-[#00e5ff] transition-colors w-fit">
+                        Explore Project <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </button>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+
+        function openProjectModal(id) {
+            const project = projectsData.find(p => p.id === id);
+            if (!project) return;
+
+            document.getElementById('modal-title').innerText = project.name;
+            document.getElementById('modal-category').innerText = project.category;
+            document.getElementById('modal-description').innerText = project.description;
+            
+            const gallery = document.getElementById('modal-gallery');
+            gallery.innerHTML = ''; // Clear old content
+            
+            project.media.forEach(item => {
+                const wrapper = document.createElement('div');
+                wrapper.className = "rounded-xl overflow-hidden border border-white/10 bg-black";
+                
+                if (item.type === 'video') {
+                    wrapper.innerHTML = `<video src="${item.url}" controls autoplay loop muted playsinline class="w-full h-auto object-contain"></video>`;
+                } else {
+                    wrapper.innerHTML = `<img src="${item.url}" alt="Project Media" class="w-full h-auto object-contain">`;
+                }
+                gallery.appendChild(wrapper);
+            });
+
+            projectModal.classList.remove('opacity-0', 'pointer-events-none');
+            projectModalWrapper.classList.remove('scale-95');
+            projectModalWrapper.classList.add('scale-100');
+            document.body.style.overflow = 'hidden'; // prevent scrolling behind modal
+        }
+
+        function closeProjectModal() {
+            projectModal.classList.add('opacity-0', 'pointer-events-none');
+            projectModalWrapper.classList.remove('scale-100');
+            projectModalWrapper.classList.add('scale-95');
+            document.body.style.overflow = '';
+            
+            // Pause any playing videos when closing
+            const videos = document.getElementById('modal-gallery').querySelectorAll('video');
+            videos.forEach(v => v.pause());
+        }
+
+        // Close on background click
+        projectModal.addEventListener('click', (e) => {
+            if (e.target === projectModal) {
+                closeProjectModal();
+            }
+        });
+    </script>
+</body>
+</html>

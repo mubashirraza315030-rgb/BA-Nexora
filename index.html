@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>BA NEXORA AI | Future-Proof Digital Solutions</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;family=JetBrains+Mono:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#f3bf26",
+                        "primary-container": "#00e5ff",
+                        "surface-container-low": "#1c1b1b",
+                        "error-container": "#93000a",
+                        "outline": "#849396",
+                        "tertiary": "#ffeac0",
+                        "on-tertiary-fixed": "#251a00",
+                        "on-tertiary-container": "#6f5500",
+                        "on-surface": "#e5e2e1",
+                        "secondary-container": "#e248ff",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#00daf3",
+                        "surface-tint": "#00daf3",
+                        "secondary": "#f8acff",
+                        "secondary-fixed": "#ffd6ff",
+                        "tertiary-container": "#fec931",
+                        "on-tertiary": "#3e2e00",
+                        "on-surface-variant": "#bac9cc",
+                        "on-secondary": "#570067",
+                        "on-primary-fixed-variant": "#004f58",
+                        "surface-container-highest": "#353534",
+                        "surface-dim": "#131313",
+                        "on-secondary-fixed-variant": "#7b0090",
+                        "on-primary": "#00363d",
+                        "on-primary-container": "#00626e",
+                        "surface-container-lowest": "#0e0e0e",
+                        "background": "#131313",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#3b494c",
+                        "secondary-fixed-dim": "#f8acff",
+                        "on-tertiary-fixed-variant": "#594400",
+                        "inverse-primary": "#006875",
+                        "surface": "#131313",
+                        "surface-bright": "#393939",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-fixed": "#350040",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-on-surface": "#313030",
+                        "on-background": "#e5e2e1",
+                        "tertiary-fixed": "#ffdf96",
+                        "on-secondary-container": "#4c005a",
+                        "primary": "#c3f5ff",
+                        "primary-fixed": "#9cf0ff",
+                        "on-error-container": "#ffdad6",
+                        "surface-container": "#201f1f",
+                        "on-primary-fixed": "#001f24",
+                        "surface-variant": "#353534"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "margin-desktop": "32px",
+                        "stack-md": "24px",
+                        "gutter": "24px",
+                        "stack-lg": "48px",
+                        "stack-sm": "12px",
+                        "unit": "4px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Space Grotesk"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg": ["Space Grotesk"],
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Space Grotesk"],
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "headline-sm": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.3", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #000000;
+            color: #e5e2e1;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .glass-panel:hover {
+            border-color: #00e5ff;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+            transform: scale(1.02);
+        }
+
+        .neon-text-glow {
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #mouse-glow {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 229, 255, 0.08) 0%, rgba(213, 0, 249, 0.05) 50%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(2deg);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .scrolling-wrapper {
+            display: flex;
+            width: calc(250px * 10);
+            animation: scroll 30s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-250px * 5));
+            }
+        }
+
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body
+    class="font-body-md text-body-md bg-background selection:bg-primary-container selection:text-on-primary-container">
+    <!-- Mouse Glow & Particles -->
+    <div id="mouse-glow"></div>
+    <canvas id="particle-canvas"></canvas>
+    <!-- Top Navigation -->
+    <header
+        class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-primary/20 shadow-[0_0_20px_rgba(0,229,255,0.1)]">
+        <nav
+            class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full mx-auto relative z-50">
+            <div class="flex items-center gap-2">
+                <img src="assets/logo.png" alt="BA Nexora AI Logo"
+                    class="h-8 w-8 md:h-10 md:w-10 object-contain rounded-lg shadow-[0_0_10px_rgba(0,229,255,0.2)]">
+                <span
+                    class="font-headline-md text-headline-sm md:text-headline-md tracking-tighter text-primary-container">BA
+                    NEXORA AI</span>
+            </div>
+            <div class="hidden lg:flex gap-8 items-center">
+                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                    href="#services">SERVICES</a>
+                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                    href="#projects">PROJECTS</a>
+                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                    href="#tech">TECH STACK</a>
+                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                    href="#about">ABOUT</a>
+                <a class="font-label-caps text-label-caps bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-bold hover:scale-105 hover:shadow-[0_0_15px_#00e5ff] transition-all"
+                    href="#contact">GET STARTED</a>
+            </div>
+            <button id="mobile-menu-btn"
+                class="lg:hidden text-primary-container p-2 relative z-50 flex items-center justify-center">
+                <!-- Hamburger Icon -->
+                <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+                <!-- Close Icon -->
+                <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-background/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-all duration-300 translate-x-full">
+        <a class="mobile-link font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors"
+            href="#services">SERVICES</a>
+        <a class="mobile-link font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors"
+            href="#projects">PROJECTS</a>
+        <a class="mobile-link font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors"
+            href="#tech">TECH STACK</a>
+        <a class="mobile-link font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors"
+            href="#about">ABOUT</a>
+        <a class="mobile-link font-label-caps text-label-caps bg-primary-container text-on-primary-container px-8 py-4 rounded-full font-bold hover:scale-105 transition-all mt-4"
+            href="#contact">GET STARTED</a>
+    </div>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex flex-col items-center justify-center pt-24 pb-stack-lg overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-[-1] opacity-60">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/0 via-black/40 to-black"></div>
+            <img alt="Cinematic AI background" class="w-full h-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUKvIjsagmV_FtJWRwARMDPkKqHb9qWZPhsG2eRJPzQNX8N56GmlTcIoqPMOMqLzPfOjVDKJhewkQKc7ZllcYvq_ZM62dZkqCXkmDRW4CVGu9-DvlS_66yH5f02Y8RFcc9uZ8u78xuW6SkNK93Nt-BTS5g0WO_Tq0rVsaWs6BWBuyESDr4tFJ1z8hjsNN2HWzMZeEH1ZgYIBMtL3UkYD-zJd1NmOqyCqaNkJzZtiyeAahxSejlqQWJWKR0v4w2f76yf2q3aL-lGfo" />
+        </div>
+        <div
+            class="w-full mx-auto px-margin-mobile md:px-margin-desktop flex flex-col lg:flex-row items-center gap-12 z-10">
+            <div class="lg:w-1/2 text-center lg:text-left reveal">
+                <h1
+                    class="font-display-lg text-headline-lg md:text-5xl lg:text-display-lg text-white mb-4 leading-none">
+                    Building AI-Powered <br class="lg:hidden"><span
+                        class="text-primary-container neon-text-glow">Digital Solutions</span>
+                </h1>
+                <div class="h-12 mb-8 overflow-hidden flex justify-center lg:justify-start">
+                    <div class="flex flex-col transition-transform duration-500 ease-in-out text-center lg:text-left"
+                        id="rotating-text">
+                        <span
+                            class="font-headline-sm text-headline-sm text-secondary-container h-12 flex items-center justify-center lg:justify-start">Automation.</span>
+                        <span
+                            class="font-headline-sm text-headline-sm text-primary-fixed-dim h-12 flex items-center justify-center lg:justify-start">Innovation.</span>
+                        <span
+                            class="font-headline-sm text-headline-sm text-tertiary-fixed-dim h-12 flex items-center justify-center lg:justify-start">Excellence.</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                    <a class="px-8 py-4 bg-transparent border border-primary-container text-primary-container font-bold rounded-lg hover:bg-primary-container/10 hover:shadow-[0_0_25px_#00e5ff] transition-all active:scale-95"
+                        href="#projects">Explore Solutions</a>
+                    <a class="px-8 py-4 text-white font-bold hover:underline underline-offset-8 transition-all"
+                        href="#contact">Consult Our Team</a>
+                </div>
+            </div>
+            <div class="lg:w-1/2 flex justify-center perspective-1000 reveal" style="transition-delay: 200ms">
+                <div class="relative w-[80%] max-w-xl animate-float" id="parallax-card">
+                    <img alt="AI Applications Showcase" class="w-full rounded-xl shadow-2xl" src="hero-apps.png" />
+                    <div
+                        class="absolute -bottom-3 -right-3 md:-bottom-6 md:-right-6 glass-panel p-3 md:p-4 rounded-xl flex">
+                        <div class="flex items-center gap-2 md:gap-3">
+                            <span class="w-2 h-2 md:w-3 md:h-3 bg-green-500 rounded-full animate-pulse"></span>
+                            <span class="font-label-caps text-[10px] md:text-label-caps">AI ENGINE ONLINE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Stats Section -->
+    <section class="py-stack-lg relative z-10 border-y border-outline-variant/30">
+        <div class="w-full mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-stack-md text-center">
+                <div class="reveal">
+                    <p class="font-display-lg text-display-lg text-primary-container counter" data-target="30">0</p>
+                    <p class="font-label-caps text-label-caps text-outline">PROJECTS COMPLETED</p>
+                </div>
+                <div class="reveal" style="transition-delay: 100ms">
+                    <p class="font-display-lg text-display-lg text-secondary-container counter" data-target="90">0</p>
+                    <p class="font-label-caps text-label-caps text-outline">CLIENT SATISFACTION %</p>
+                </div>
+                <div class="reveal" style="transition-delay: 200ms">
+                    <p class="font-display-lg text-display-lg text-tertiary-fixed-dim">24/7</p>
+                    <p class="font-label-caps text-label-caps text-outline">AI SUPPORT UPTIME</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Grid -->
+    <section class="py-stack-lg relative z-10" id="services">
+        <div class="w-full mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-headline-lg text-headline-lg text-white mb-2">Our Ecosystem</h2>
+                <p class="text-outline max-w-2xl mx-auto">Precision-engineered artificial intelligence services designed
+                    for the demands of tomorrow.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+                <!-- Card 1 -->
+                <div class="glass-panel p-stack-md rounded-xl reveal cursor-pointer group"
+                    onclick="openServiceModal('ai-automation')">
+                    <span
+                        class="material-symbols-outlined text-primary-container text-display-lg mb-4 group-hover:scale-110 transition-transform">smart_toy</span>
+                    <h3 class="font-headline-sm text-headline-sm text-white mb-2">AI Automation</h3>
+                    <p class="text-on-surface-variant font-body-sm">Streamline workflows with autonomous agents that
+                        learn and adapt to your business needs.</p>
+                    <div
+                        class="mt-4 text-primary-container text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+                        View Details <span class="material-symbols-outlined text-sm">arrow_forward</span></div>
+                </div>
+                <!-- Card 2 -->
+                <div class="glass-panel p-stack-md rounded-xl reveal cursor-pointer group"
+                    style="transition-delay: 100ms" onclick="openServiceModal('web-development')">
+                    <span
+                        class="material-symbols-outlined text-secondary-container text-display-lg mb-4 group-hover:scale-110 transition-transform">code_off</span>
+                    <h3 class="font-headline-sm text-headline-sm text-white mb-2">Web Development</h3>
+                    <p class="text-on-surface-variant font-body-sm">High-performance, scalable web platforms built with
+                        React, Next.js, and cutting-edge tech.</p>
+                    <div
+                        class="mt-4 text-secondary-container text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+                        View Details <span class="material-symbols-outlined text-sm">arrow_forward</span></div>
+                </div>
+                <!-- Card 3 -->
+                <div class="glass-panel p-stack-md rounded-xl reveal cursor-pointer group"
+                    style="transition-delay: 200ms" onclick="openServiceModal('mobile-apps')">
+                    <span
+                        class="material-symbols-outlined text-tertiary-fixed-dim text-display-lg mb-4 group-hover:scale-110 transition-transform">terminal</span>
+                    <h3 class="font-headline-sm text-headline-sm text-white mb-2">Mobile Apps</h3>
+                    <p class="text-on-surface-variant font-body-sm">Native performance cross-platform applications with
+                        seamless AI integrations and offline capabilities.</p>
+                    <div
+                        class="mt-4 text-tertiary-fixed-dim text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+                        View Details <span class="material-symbols-outlined text-sm">arrow_forward</span></div>
+                </div>
+                <!-- Card 4 -->
+                <div class="glass-panel p-stack-md rounded-xl reveal cursor-pointer group"
+                    onclick="openServiceModal('dashboards')">
+                    <span
+                        class="material-symbols-outlined text-error text-display-lg mb-4 group-hover:scale-110 transition-transform">monitoring</span>
+                    <h3 class="font-headline-sm text-headline-sm text-white mb-2">Dashboards</h3>
+                    <p class="text-on-surface-variant font-body-sm">Visualize complex data sets with real-time
+                        holographic-style glass dashboards and analytics.</p>
+                    <div
+                        class="mt-4 text-error text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+                        View Details <span class="material-symbols-outlined text-sm">arrow_forward</span></div>
+                </div>
+                <!-- Card 5 -->
+                <div class="glass-panel p-stack-md rounded-xl reveal cursor-pointer group"
+                    style="transition-delay: 100ms" onclick="openServiceModal('ai-chatbots')">
+                    <span
+                        class="material-symbols-outlined text-primary-fixed-dim text-display-lg mb-4 group-hover:scale-110 transition-transform">forum</span>
+                    <h3 class="font-headline-sm text-headline-sm text-white mb-2">AI Chatbots</h3>
+                    <p class="text-on-surface-variant font-body-sm">Conversational interfaces powered by LLMs to provide
+                        instant, human-like customer interaction.</p>
+                    <div
+                        class="mt-4 text-primary-fixed-dim text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+                        View Details <span class="material-symbols-outlined text-sm">arrow_forward</span></div>
+                </div>
+                <!-- Card 6 -->
+                <div class="glass-panel p-stack-md rounded-xl reveal cursor-pointer group"
+                    style="transition-delay: 200ms" onclick="openServiceModal('api-integrations')">
+                    <span
+                        class="material-symbols-outlined text-secondary text-display-lg mb-4 group-hover:scale-110 transition-transform">api</span>
+                    <h3 class="font-headline-sm text-headline-sm text-white mb-2">API Integrations</h3>
+                    <p class="text-on-surface-variant font-body-sm">Connect your legacy systems with modern AI providers
+                        through robust, secure API layers.</p>
+                    <div
+                        class="mt-4 text-secondary text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+                        View Details <span class="material-symbols-outlined text-sm">arrow_forward</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Projects (Showcase Teaser) -->
+    <section class="py-24 relative z-10 overflow-hidden" id="projects">
+        <!-- Decorative background glow -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary-container/10 blur-[120px] rounded-full pointer-events-none">
+        </div>
+
+        <div class="w-full mx-auto px-margin-mobile md:px-margin-desktop relative">
+            <div
+                class="glass-panel p-8 md:p-16 rounded-3xl reveal relative overflow-hidden border border-primary-container/20 group">
+
+                <!-- Grid pattern background overlay -->
+                <div class="absolute inset-0 opacity-[0.03] pointer-events-none"
+                    style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;">
+                </div>
+
+                <!-- Glowing decorative elements -->
+                <div
+                    class="absolute -right-20 -top-20 w-64 h-64 bg-secondary-container/20 blur-[80px] rounded-full group-hover:bg-primary-container/30 transition-colors duration-700 pointer-events-none">
+                </div>
+                <div
+                    class="absolute -left-20 -bottom-20 w-64 h-64 bg-primary-container/20 blur-[80px] rounded-full group-hover:bg-secondary-container/30 transition-colors duration-700 pointer-events-none">
+                </div>
+
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10">
+                    <!-- Text Content -->
+                    <div class="flex-1 text-center lg:text-left">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container/10 border border-primary-container/30 text-primary-container text-xs font-bold tracking-widest mb-6">
+                            <span class="material-symbols-outlined text-[14px]">science</span>
+                            STARTUP LABS
+                        </div>
+                        <h2
+                            class="font-display-lg text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight font-bold">
+                            Discover Our <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-secondary-container neon-text-glow">Latest
+                                Innovations</span>
+                        </h2>
+                        <p
+                            class="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed">
+                            We are constantly pushing the boundaries of what's possible with artificial intelligence.
+                            Dive into our exclusive portfolio of active demonstrations, proof-of-concepts, and MVP
+                            architectures.
+                        </p>
+                        <a class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-black font-bold rounded-xl hover:scale-105 hover:bg-primary-container hover:shadow-[0_0_30px_rgba(0,229,255,0.4)] transition-all duration-300 w-full sm:w-auto"
+                            href="projects.html">
+                            Explore Project Showcase <span
+                                class="material-symbols-outlined group-hover:translate-x-1 transition-transform">rocket_launch</span>
+                        </a>
+                    </div>
+
+                    <!-- Abstract Visual -->
+                    <div
+                        class="flex w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] md:w-[400px] md:h-[400px] relative items-center justify-center mx-auto mt-12 lg:mt-0">
+                        <!-- Spinning Rings -->
+                        <div
+                            class="absolute w-full h-full border border-primary-container/20 rounded-full animate-[spin_20s_linear_infinite]">
+                        </div>
+                        <div
+                            class="absolute w-[80%] h-[80%] border border-secondary-container/20 rounded-full animate-[spin_15s_linear_infinite_reverse]">
+                        </div>
+                        <div
+                            class="absolute w-[60%] h-[60%] border border-primary-container/40 rounded-full animate-[spin_10s_linear_infinite] border-dashed">
+                        </div>
+
+                        <!-- Floating Project Teaser Cards -->
+                        <div
+                            class="absolute -left-4 top-12 md:-left-8 md:top-20 glass-panel p-2 md:p-4 rounded-xl flex items-center gap-2 md:gap-3 animate-float w-36 md:w-48 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+                            <span
+                                class="material-symbols-outlined text-secondary-container text-2xl md:text-3xl">smartphone</span>
+                            <div>
+                                <div class="text-white text-xs md:text-sm font-bold">Mobile AI</div>
+                                <div class="text-outline text-[10px] md:text-xs">Beta Test</div>
+                            </div>
+                        </div>
+
+                        <div class="absolute -right-4 bottom-12 md:-right-8 md:bottom-20 glass-panel p-2 md:p-4 rounded-xl flex items-center gap-2 md:gap-3 animate-float w-40 md:w-52 shadow-[0_0_20px_rgba(0,0,0,0.5)]"
+                            style="animation-delay: -2s">
+                            <span
+                                class="material-symbols-outlined text-primary-container text-2xl md:text-3xl">monitoring</span>
+                            <div>
+                                <div class="text-white text-xs md:text-sm font-bold">Data Pipeline</div>
+                                <div class="text-outline text-[10px] md:text-xs">Live Demo</div>
+                            </div>
+                        </div>
+
+                        <!-- Center Core -->
+                        <div
+                            class="w-16 h-16 md:w-24 md:h-24 bg-gradient-to-tr from-primary-container to-secondary-container rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(0,229,255,0.4)] md:shadow-[0_0_50px_rgba(0,229,255,0.5)] animate-pulse relative z-10">
+                            <span
+                                class="material-symbols-outlined text-black text-2xl md:text-4xl">folder_special</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Tech Stack Scrolling -->
+    <section class="py-stack-lg relative overflow-hidden z-10 border-y border-outline-variant/20" id="tech">
+        <div class="w-full mx-auto px-margin-mobile md:px-margin-desktop mb-10 text-center reveal">
+            <h2 class="font-headline-sm text-headline-sm text-outline">OUR CORE TECHNOLOGY STACK</h2>
+        </div>
+        <div class="flex overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
+            <div class="scrolling-wrapper">
+                <!-- Tech Icons -->
+                <div class="flex items-center justify-center w-[250px] gap-3">
+                    <img alt="Python" class="w-12 h-12"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWzY_nQqbHKP6SR7cTGrNl6Uu9SKNXeQd34es0gMbgfkD2CuXiA1d_dw-Z118T7oufa8ClkHyPBY5E4f1GwI71BwDFmSG41aBtAWqoXTGJWBGrxFZmmaX6y8smxLnYQ1JKGMBlBHLh_RoSSYQ9YnVfzitnjnP2LTT667ZucSAkbejs0h7j3nMviFHyTE_PBfFl8mA6FG64Ec4iYIhZ_35jGOcjK0JQXAHwKfUZ75rFQmxbmHFc2KL_o5qiOivimaQTSAy7yH5Do9c" />
+                    <span class="font-label-caps text-label-caps text-white">PYTHON</span>
+                </div>
+                <div class="flex items-center justify-center w-[250px] gap-3">
+                    <img alt="React" class="w-12 h-12"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk6m7ODYoOI94uxMvF7qcx7zuERIuaRBtTWVHzgmUGmTLhWz7fbAaiekvdUgpY7jhb-1_KkDY5UeN1qltsVVpz0K1UaVu8rsGvHkQnXb2SjesU8OrnCwkWNJwuCwrfZ0X58MnlMewZAiJPfV_UipY1TqkQ0BXYYtUULGYIUzKssPhgH4vX3PBUgz4AkoMo0lrAD-1k4o8CxG3zzM2E1EI8TKc4ju53MH0JUdZPSHB8gtGS0ljUNy8yV2vwmFJ3emlJcH-Q_BHZQDo" />
+                    <span class="font-label-caps text-label-caps text-white">REACT JS</span>
+                </div>
+                <div class="flex items-center justify-center w-[250px] gap-3">
+                    <img alt="OpenAI" class="w-12 h-12"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-OoV9Egq6MJdAxaQgvHmu3xna5nH8K38Vlb_DxcITCWb4TxRBwzQwQOxIJuAAKtf8uNUuoqW9qvGRPOZJnKCOb4tnwwaSi1kbCHzXpBWg6ZIATw9Sv2bML2O0T3Ycu1diwPtXtxxaVcITKgUQZw1NecmuX6D018NK0KVBQZ9aDlMNZojxA3_AV0BYJnYyvIMvZk9huYWgSt1iXiifm8qjbRRN0YV8b9E2LcbcqV5TnbzXgec8BCqku22qMIymtDpfKL2lGBtcWGI" />
+                    <span class="font-label-caps text-label-caps text-white">OPENAI</span>
+                </div>
+                <div class="flex items-center justify-center w-[250px] gap-3">
+                    <img alt="Tailwind" class="w-12 h-12"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfPJU72tY01MVQpgPwGXhQRyAy_ptbMuWNXwPFi9o37-ocLcfsDqcZT2_AP4mukWhwd5LzwQNTGWG3hxMIfIUek23b4JnEwr-nqS6YT2wHWV-fXJ116YnS8dduFIchueQPQYjOsKCfpkEjTkcHPqynS2w-Z5iMtUyEqOyaZx4Ss7CNxt9kswBVruNELhqq9WoSgFIkJ9WMcCsRBFvzVUj4iUl9LKV567tVRsQzUz2TseqQ8cAVE5DdlImUi_1XRqQoVuELugCbpwE" />
+                    <span class="font-label-caps text-label-caps text-white">TAILWIND</span>
+                </div>
+                <div class="flex items-center justify-center w-[250px] gap-3">
+                    <img alt="NodeJS" class="w-12 h-12"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK1d1yqYq-TmO-YQtFe5v-bW0tiVh7ZZTciirjYA1BOPAWEyLlCFtEhAWBjOiB9LjmP5CbNLoHj6E4eGp_taYwtCnC8WRbXG_-9CG29-vFELp-zd3enqgbhKy-xO38QfrX_WeRODNH-XkuUigjYVa8Bk98usx12qF4-XuVeZ-_8YX3cdSe4z1xmcJAXJPZruuph9byiRYupzYl1Y0A-nU51aDa3VnGTzqh_J9JmtMJt_5ZucuSsJD5UkEs7tZEYSUA9xxYOOgEV9M" />
+                    <span class="font-label-caps text-label-caps text-white">NODE JS</span>
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="flex items-center justify-center w-[250px] gap-3">
+                    <img alt="Python" class="w-12 h-12"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVZ4aWZYSThrvJQMmau7OOF-w74j90_2TkU2NBbw61199GcW1TAw3xuZ7HKLuC45mWiE-WvMdCHlJFVcTjxCN7PkubaSFer-mHLtJYE_p-b1strXwIPOQ9zd3U6p4l5jVxax03BKqiYXasfv6irmacxgS6aqJfMUYdQTNFb75NSIYRr_uh0crzLXDd3FATLuR6yzw76nkSqJUZW-l-9bYcub8PR30vEaeGiuHTZxnUbNoT8ign3CVUsX0n5XH4MOgSZ1lWfpsxWXc" />
+                    <span class="font-label-caps text-label-caps text-white">PYTHON</span>
+                </div>
+                <div class="flex items-center justify-center w-[250px] gap-3">
+                    <img alt="React" class="w-12 h-12"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYmPvbKemwPkO2n4Cb1KRA98agr6pv98y_R_cVA8g5lCqPg1cdT-F9mK5mS8vLDMC5O0FA0KMbjDmeK58JET2Lg3Yx-pMjNCi_yzyrafY7ZD-9KrPNLrlS1oW0K3UbNSQ8wO8-QTw8tpGIkIRSltZecBCBcLuH-C2_DwFjOJEpRcJlsxXzuHJP3BfbVHCqjmDRE6fCTEwE2vaRL4h_63mXGmdMDVL0cXB_CNYDQcsgR3K-5VNE5qYjH4zeb3sOeGFvrRUkNEX9Lcw" />
+                    <span class="font-label-caps text-label-caps text-white">REACT JS</span>
+                </div>
+                <div class="flex items-center justify-center w-[250px] gap-3">
+                    <img alt="OpenAI" class="w-12 h-12"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpzsgFyuka1zvNw-VaZUfBYpiRRg1nUdf6awAUq3pzDM7hKa2wSj9uHdlufSCmb2_FhTdzOPoGbchvyIkPRGx41cR7w9qDpbr27_d_FlI352PjLJqLexhc64EnXIXZLQ6WXlVEf4n_RLsDaMwZepzlm-AQH6cytrT_L0VNO-6v4uuyvbZbGLJoL57f-eNk650XpGknh6Keqs7Kipj9vIjmkSQ_TnAkmJ5TI0CrpNP2uIzkXDuJTT26Z7xuMCmUUcF8ZXdeexl9WkY" />
+                    <span class="font-label-caps text-label-caps text-white">OPENAI</span>
+                </div>
+                <div class="flex items-center justify-center w-[250px] gap-3">
+                    <img alt="Tailwind" class="w-12 h-12"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR7oCfyqJgzjBhnl8zSEb-HioNpVhLK0sUIqlB-jvCCf-bNUOikxU7UVQcuYvhSFbFhcV7D_P-tyUNNZDDdBdpRYbi5Lut5gB0DuxpkzE3Iontzjd3GukknHZNZNbxeuSjz_4tAg-YI0YS0D8tWlmujZqw_uPB5NqQOtq9qQ8QAD3ICJSsdl0z5fhryms-hknmdKwJw7vMN61gIKQ4-MdtUVHZg0txp4XpqlXWe21R1RgztU51BiGtwnar9DHdZ1TV-VYyzq1HAts" />
+                    <span class="font-label-caps text-label-caps text-white">TAILWIND</span>
+                </div>
+                <div class="flex items-center justify-center w-[250px] gap-3">
+                    <img alt="NodeJS" class="w-12 h-12"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB63fuJLsbfYJilnzsMztakq9p6c6NFLRPVTVILpGrVMxLXUSEHUInHO7pjg0Qyrzyjogvd2WQG19BXCoZHhUHW1o-S3rbVqJAC-ABqBEbV_5lmbbsVwYKIXMPXW_u_JB-pYaMoLg3MFqY2PH7TBilObH07UiNHC2H8Yc-tZ4oLoKW74oT5K9t8jXbqfvXASjpDd-8LiM7v7gzpsO_ZkU-HQUjYoawwQuJkSbQVrGT2QMEPAWZUz1MKnZVhtyBI3NE7VZ5s2GrQV4k" />
+                    <span class="font-label-caps text-label-caps text-white">NODE JS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section class="py-stack-lg relative z-10 overflow-hidden" id="about">
+        <div class="w-full mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 reveal">
+                    <h2 class="font-headline-lg text-headline-lg text-white mb-6">Redefining Intelligence</h2>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                        BA NEXORA AI was founded on the principle that the gap between human creativity and machine
+                        capability is meant to be bridged, not feared.
+                    </p>
+                    <p class="font-body-md text-body-md text-outline mb-8">
+                        Our team of developers, researchers, and visionaries work at the intersection of deep learning
+                        and human-centric design. We don't just build software; we architect the digital future.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-primary-container">
+                                <span class="material-symbols-outlined">verified</span>
+                            </div>
+                            <span class="font-headline-sm text-headline-sm text-white">Security-First Protocol</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-secondary-container">
+                                <span class="material-symbols-outlined">bolt</span>
+                            </div>
+                            <span class="font-headline-sm text-headline-sm text-white">Ultra-Low Latency
+                                Inference</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 relative reveal" style="transition-delay: 200ms">
+                    <div class="aspect-square relative flex items-center justify-center">
+                        <!-- Abstract Visual -->
+                        <div class="absolute w-64 h-64 bg-primary-container/20 rounded-full blur-[80px] animate-pulse">
+                        </div>
+                        <div
+                            class="absolute w-48 h-48 bg-secondary-container/20 rounded-full blur-[80px] delay-1000 animate-pulse">
+                        </div>
+                        <img alt="Futuristic AI Visual"
+                            class="w-4/5 h-4/5 object-cover rounded-2xl glass-panel grayscale hover:grayscale-0 transition-all duration-700"
+                            data-alt="A conceptual digital portrait of an AI neural network in the shape of a human brain. The brain is made of thousands of glowing interconnected points and luminous blue filaments. The background is a pitch-black void, emphasizing the complexity and brilliance of the digital consciousness. The lighting is focused and dramatic."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3VZLlAjeFyZFhLMTKLL3_1MpGqS4x2YyRSnHLOhd-ZweM4XidUJO2yQPjsDshUX5nHKN-9-99hEeayTZHPJjRg-WLuEwj-cafVpx4Ci0EVnwj4VuHVnVVuONCRqYa2AHewHZMlhwBwzAvp5INXDhRNaEWYns3iuxqvohcNV_j3ejEwHeSxIocnoR3UtufoEjPbC3PYXbFiGVh68RDfIGburi_aqF42eb_jqUwa-87Sl7htm2wsUL-NPlhq_8MCeTx2PMvgYocMU8" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section class="py-stack-lg relative z-10" id="contact">
+        <div class="w-full mx-auto px-margin-mobile md:px-margin-desktop max-w-4xl">
+            <div class="glass-panel p-stack-lg rounded-3xl reveal">
+                <div class="text-center mb-10">
+                    <h2 class="font-headline-lg text-headline-lg text-white mb-2">Initiate Contact</h2>
+                    <p class="text-outline">Ready to augment your digital reality?</p>
+                </div>
+                <form id="contact-form" class="space-y-6" onsubmit="handleContactSubmit(event)">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex flex-col gap-2">
+                            <label class="font-label-caps text-label-caps text-primary-container">IDENTIFIER</label>
+                            <input id="contact-name"
+                                class="w-full bg-black/40 border border-outline-variant/30 text-white rounded-lg p-4 focus:border-primary-container focus:ring-0 transition-all placeholder:text-outline/50"
+                                placeholder="Your Name" type="text" required />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="font-label-caps text-label-caps text-primary-container">EMAIL ADDRESS</label>
+                            <input id="contact-email"
+                                class="w-full bg-black/40 border border-outline-variant/30 text-white rounded-lg p-4 focus:border-primary-container focus:ring-0 transition-all placeholder:text-outline/50"
+                                placeholder="Email Address" type="email" />
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex flex-col gap-2">
+                            <label class="font-label-caps text-label-caps text-primary-container">PHONE
+                                CONNECTION</label>
+                            <div class="flex gap-2">
+                                <select id="contact-phone-prefix"
+                                    class="w-36 md:w-44 shrink-0 bg-black/40 border border-outline-variant/30 text-white rounded-lg pl-3 pr-10 h-[58px] focus:border-primary-container focus:ring-0 transition-all">
+                                </select>
+                                <input id="contact-phone"
+                                    class="flex-1 min-w-0 bg-black/40 border border-outline-variant/30 text-white rounded-lg px-4 h-[58px] focus:border-primary-container focus:ring-0 transition-all placeholder:text-outline/50"
+                                    placeholder="Phone number" type="tel" />
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="font-label-caps text-label-caps text-primary-container">PROJECT SCOPE</label>
+                            <select id="contact-scope"
+                                class="w-full bg-black/40 border border-outline-variant/30 text-white rounded-lg py-4 pl-4 pr-10 focus:border-primary-container focus:ring-0 transition-all">
+                                <option class="bg-surface-container-highest">AI Automation</option>
+                                <option class="bg-surface-container-highest">Web/Mobile Platform</option>
+                                <option class="bg-surface-container-highest">Custom API Ecosystem</option>
+                                <option class="bg-surface-container-highest">Other Futuristic Endeavor</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="font-label-caps text-label-caps text-primary-container">MISSION DETAILS</label>
+                        <textarea id="contact-message"
+                            class="w-full bg-black/40 border border-outline-variant/30 text-white rounded-lg p-4 focus:border-primary-container focus:ring-0 transition-all placeholder:text-outline/50"
+                            placeholder="Tell us about your vision..." rows="4" required></textarea>
+                    </div>
+                    <button
+                        class="w-full bg-primary-container text-on-primary-container font-bold py-4 rounded-lg hover:scale-[1.02] hover:shadow-[0_0_30px_#00e5ff] active:scale-95 transition-all animate-pulse hover:animate-none"
+                        type="submit">
+                        TRANSMIT MESSAGE
+                    </button>
+                    <p id="contact-success" class="text-green-400 text-center font-bold mt-4 hidden">Message transmitted
+                        successfully!</p>
+                    <p id="contact-error" class="text-red-400 text-center font-bold mt-4 hidden"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <!-- Floating WhatsApp Button -->
+    <!-- SET WHATSAPP NUMBER HERE -->
+    <a href="https://wa.me/923095383442?text=Hello%20BA%20NEXORA%20AI,%20I'm%20interested%20in%20your%20services!"
+        target="_blank"
+        class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#128C7E] text-white w-14 h-14 rounded-full shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:shadow-[0_0_30px_rgba(37,211,102,0.6)] transition-all hover:scale-110 flex items-center justify-center group">
+        <svg viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
+            <path
+                d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.12.553 4.195 1.605 6.015L.302 24l6.103-1.601a11.96 11.96 0 005.626 1.398h.005c6.645 0 12.03-5.386 12.03-12.03 0-3.22-1.253-6.248-3.532-8.527C18.256 1.254 15.228 0 12.031 0zm.005 21.796c-1.785 0-3.541-.478-5.076-1.388l-.364-.216-3.771.99.99-3.676-.237-.377A9.974 9.974 0 012.016 12.03c0-5.525 4.498-10.02 10.025-10.02 2.678 0 5.195 1.042 7.086 2.936A9.982 9.982 0 0122.062 12.03c0 5.525-4.498 10.02-10.026 10.02h-.005zm5.498-7.502c-.302-.151-1.785-.882-2.061-.983-.277-.101-.478-.151-.68.151-.202.302-.781.983-.956 1.185-.176.202-.352.227-.655.076-1.312-.663-2.39-1.378-3.29-2.888-.101-.176.101-.176.39-.755.076-.151.038-.277-.013-.378-.05-.101-.68-1.636-.93-2.241-.243-.586-.49-.508-.68-.518-.176-.008-.378-.008-.58-.008s-.53.076-.807.378c-.277.302-1.056 1.032-1.056 2.518 0 1.486 1.082 2.923 1.233 3.125.151.202 2.135 3.255 5.176 4.567.724.312 1.288.498 1.728.638.725.23 1.385.197 1.9.119.58-.088 1.785-.73 2.036-1.435.252-.705.252-1.31.176-1.435-.075-.126-.277-.202-.579-.353z" />
+        </svg>
+        <span
+            class="absolute right-full mr-4 bg-surface-container-high text-white text-sm px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-outline-variant/50 pointer-events-none">Message
+            Us on WhatsApp</span>
+    </a>
+
+    <!-- Service Modal -->
+    <div id="service-modal"
+        class="fixed inset-0 z-[60] bg-black/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4">
+        <div class="glass-panel bg-surface-container-low max-w-2xl w-full max-h-[85vh] rounded-2xl flex flex-col transform scale-95 transition-transform duration-300"
+            id="service-modal-content-wrapper">
+            <div
+                class="p-6 border-b border-outline-variant/30 flex justify-between items-center sticky top-0 bg-surface-container-low z-10 rounded-t-2xl">
+                <div class="flex items-center gap-3">
+                    <span id="modal-icon" class="material-symbols-outlined text-display-lg"></span>
+                    <h3 id="modal-title" class="font-headline-lg text-2xl md:text-3xl text-white font-bold"></h3>
+                </div>
+                <button onclick="closeServiceModal()"
+                    class="text-on-surface-variant hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div id="modal-body" class="p-6 overflow-y-auto flex-1">
+                <!-- Content injected via JS -->
+            </div>
+            <div class="p-6 border-t border-outline-variant/30 bg-surface-container-low rounded-b-2xl sticky bottom-0">
+                <a id="modal-whatsapp-btn" href="#" target="_blank"
+                    class="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-3 rounded-lg flex items-center justify-center gap-2 transition-all">
+                    <span class="material-symbols-outlined">chat</span> Discuss on WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Particle Background System
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 1.5 + 0.5;
+                this.speedX = Math.random() * 0.5 - 0.25;
+                this.speedY = Math.random() * 0.5 - 0.25;
+                this.alpha = Math.random() * 0.5 + 0.1;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                    this.reset();
+                }
+            }
+            draw() {
+                ctx.fillStyle = `rgba(0, 229, 255, ${this.alpha})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            for (let i = 0; i < 100; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        initParticles();
+        animateParticles();
+
+        // Mouse & Touch Follow Effect
+        const glow = document.getElementById('mouse-glow');
+        const updateGlow = (x, y) => {
+            glow.style.left = x + 'px';
+            glow.style.top = y + 'px';
+        };
+        document.addEventListener('mousemove', (e) => {
+            updateGlow(e.clientX, e.clientY);
+        });
+        document.addEventListener('touchmove', (e) => {
+            if (e.touches.length > 0) {
+                updateGlow(e.touches[0].clientX, e.touches[0].clientY);
+            }
+        });
+        document.addEventListener('touchstart', (e) => {
+            if (e.touches.length > 0) {
+                updateGlow(e.touches[0].clientX, e.touches[0].clientY);
+            }
+        });
+
+        // 3D Parallax Hover for Hero Image (Desktop Mouse / Mobile Orientation)
+        const card = document.getElementById('parallax-card');
+
+        // Mouse movement for desktop
+        document.addEventListener('mousemove', (e) => {
+            const x = (window.innerWidth / 2 - e.clientX) / 25;
+            const y = (window.innerHeight / 2 - e.clientY) / 25;
+            card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+        });
+
+        // Device orientation (gyroscope) tilt for mobile view
+        window.addEventListener('deviceorientation', (e) => {
+            if (e.gamma !== null && e.beta !== null) {
+                // Limit the rotation angle for a subtle, premium parallax tilt
+                const x = Math.min(Math.max(e.gamma / 3, -12), 12);
+                const y = Math.min(Math.max((e.beta - 45) / 3, -12), 12); // assumes a comfortable 45-degree holding angle
+                card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+            }
+        });
+
+        // Rotating Text Logic
+        const rotatingText = document.getElementById('rotating-text');
+        let currentIdx = 0;
+        setInterval(() => {
+            currentIdx = (currentIdx + 1) % 3;
+            rotatingText.style.transform = `translateY(-${currentIdx * 48}px)`;
+        }, 3000);
+
+        // Reveal Animations with IntersectionObserver
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Special case for counters
+                    if (entry.target.querySelector('.counter')) {
+                        startCounter(entry.target.querySelector('.counter'));
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Animated Counter
+        function startCounter(el) {
+            const target = parseInt(el.getAttribute('data-target'));
+            let count = 0;
+            const duration = 2000;
+            const increment = target / (duration / 16);
+
+            const update = () => {
+                count += increment;
+                if (count < target) {
+                    el.innerText = Math.floor(count);
+                    requestAnimationFrame(update);
+                } else {
+                    el.innerText = target + (target == 50 ? "+" : "");
+                }
+            };
+            update();
+        }
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'translate-x-full');
+                mobileMenu.classList.add('opacity-100', 'pointer-events-auto', 'translate-x-0');
+                if (hamburgerIcon) hamburgerIcon.classList.add('hidden');
+                if (closeIcon) closeIcon.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-x-full');
+                mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'translate-x-0');
+                if (hamburgerIcon) hamburgerIcon.classList.remove('hidden');
+                if (closeIcon) closeIcon.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        }
+
+        if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+        // Services Data & Modal Logic
+        const servicesData = {
+            'ai-automation': {
+                title: 'AI Automation',
+                icon: 'smart_toy',
+                iconColor: 'text-primary-container',
+                content: `
+                    <div class="space-y-4">
+                        <h4 class="text-white font-bold text-lg">What It Is</h4>
+                        <p class="text-on-surface-variant text-sm">Smart systems that automate repetitive business tasks using AI.</p>
+                        
+                        <h4 class="text-white font-bold text-lg">Why Businesses Need It</h4>
+                        <ul class="list-disc pl-5 text-on-surface-variant text-sm space-y-1">
+                            <li>Saves time</li>
+                            <li>Reduces manual work</li>
+                            <li>Improves efficiency</li>
+                            <li>Works 24/7</li>
+                            <li>Reduces operational costs</li>
+                        </ul>
+
+                        <h4 class="text-white font-bold text-lg">Benefits</h4>
+                        <ul class="list-disc pl-5 text-on-surface-variant text-sm space-y-1">
+                            <li>Automated workflows</li>
+                            <li>Faster response times</li>
+                            <li>Smart decision making</li>
+                            <li>Fewer human errors</li>
+                            <li>Better customer experience</li>
+                        </ul>
+
+                        <h4 class="text-white font-bold text-lg">Where It's Used</h4>
+                        <ul class="list-disc pl-5 text-on-surface-variant text-sm space-y-1">
+                            <li>Construction companies</li>
+                            <li>Real estate agencies</li>
+                            <li>Clinics</li>
+                            <li>Accounting firms</li>
+                            <li>Restaurants</li>
+                            <li>E-commerce stores</li>
+                        </ul>
+
+                        <h4 class="text-white font-bold text-lg">Examples</h4>
+                        <ul class="list-disc pl-5 text-on-surface-variant text-sm space-y-1">
+                            <li>WhatsApp automation</li>
+                            <li>Invoice processing</li>
+                            <li>Lead management</li>
+                            <li>Appointment booking</li>
+                            <li>AI email automation</li>
+                        </ul>
+                    </div>
+                `
+            },
+            'web-development': {
+                title: 'Web Development',
+                icon: 'code_off',
+                iconColor: 'text-secondary-container',
+                content: `
+                    <div class="space-y-4">
+                        <h4 class="text-white font-bold text-lg">What It Is</h4>
+                        <p class="text-on-surface-variant text-sm">Modern high-performance websites and web platforms built for speed, scalability, and business growth.</p>
+                        
+                        <h4 class="text-white font-bold text-lg">Why Businesses Need It</h4>
+                        <ul class="list-disc pl-5 text-on-surface-variant text-sm space-y-1">
+                            <li>Creates professional online presence</li>
+                            <li>Builds trust with customers</li>
+                            <li>Generates leads</li>
+                            <li>Improves brand identity</li>
+                        </ul>
+
+                        <h4 class="text-white font-bold text-lg">Benefits</h4>
+                        <ul class="list-disc pl-5 text-on-surface-variant text-sm space-y-1">
+                            <li>Fast loading speed</li>
+                            <li>Mobile responsive design</li>
+                            <li>SEO optimized</li>
+                            <li>Smooth user experience</li>
+                            <li>Secure architecture</li>
+                            <li>Scalable systems</li>
+                        </ul>
+
+                        <h4 class="text-white font-bold text-lg">Where It's Used</h4>
+                        <ul class="list-disc pl-5 text-on-surface-variant text-sm space-y-1">
+                            <li>Business websites</li>
+                            <li>SaaS platforms</li>
+                            <li>AI startup websites</li>
+                            <li>Portfolios</li>
+                            <li>E-commerce stores</li>
+                            <li>Client portals</li>
+                        </ul>
+
+                        <h4 class="text-white font-bold text-lg">Technologies</h4>
+                        <ul class="list-disc pl-5 text-on-surface-variant text-sm space-y-1">
+                            <li>React</li>
+                            <li>Next.js</li>
+                            <li>Tailwind CSS</li>
+                            <li>Framer Motion</li>
+                        </ul>
+                    </div>
+                `
+            },
+            'mobile-apps': {
+                title: 'Mobile Apps',
+                icon: 'terminal',
+                iconColor: 'text-tertiary-fixed-dim',
+                content: `
+                    <div class="space-y-4">
+                        <h4 class="text-white font-bold text-lg">What It Is</h4>
+                        <p class="text-on-surface-variant text-sm">Cross-platform mobile applications with modern UI and AI-powered features.</p>
+                        
+                        <h4 class="text-white font-bold text-lg">Why Businesses Need It</h4>
+                        <ul class="list-disc pl-5 text-on-surface-variant text-sm space-y-1">
+                            <li>Customers prefer mobile access</li>
+                            <li>Improves engagement</li>
+                            <li>Makes services easier to access</li>
+                        </ul>
+
+                        <h4 class="text-white font-bold text-lg">Benefits</h4>
+                        <ul class="list-disc pl-5 text-on-surface-variant text-sm space-y-1">
+                            <li>Push notifications</li>
+                            <li>Real-time updates</li>
+                            <li>AI integrations</li>
+                            <li>Offline support</li>
+                            <li>Fast performance</li>
+                            <li>Better customer retention</li>
+                        </ul>
+
+                        <h4 class="text-white font-bold text-lg">Where It's Used</h4>
+                        <ul class="list-disc pl-5 text-on-surface-variant text-sm space-y-1">
+                            <li>Delivery apps</li>
+                            <li>Booking systems</li>
+                            <li>Fitness apps</li>
+                            <li>Business management apps</li>
+                            <li>E-commerce apps</li>
+                            <li>Client service apps</li>
+                        </ul>
+
+                        <h4 class="text-white font-bold text-lg">Technologies</h4>
+                        <ul class="list-disc pl-5 text-on-surface-variant text-sm space-y-1">
+                            <li>Flutter</li>
+                            <li>React Native</li>
+                            <li>Firebase</li>
+                            <li>Supabase</li>
+                        </ul>
+                    </div>
+                `
+            },
+            'dashboards': {
+                title: 'Dashboards',
+                icon: 'monitoring',
+                iconColor: 'text-error',
+                content: `
+                    <div class="space-y-4">
+                        <h4 class="text-white font-bold text-lg">What It Is</h4>
+                        <p class="text-on-surface-variant text-sm">Interactive visual systems for tracking business data, analytics, and operations in real time.</p>
+                        
+                        <h4 class="text-white font-bold text-lg">Why Businesses Need It</h4>
+                        <ul class="list-disc pl-5 text-on-surface-variant text-sm space-y-1">
+                            <li>Businesses need data visibility</li>
+                            <li>Helps in decision making</li>
+                            <li>Tracks performance instantly</li>
+                        </ul>
+
+                        <h4 class="text-white font-bold text-lg">Benefits</h4>
+                        <ul class="list-disc pl-5 text-on-surface-variant text-sm space-y-1">
+                            <li>Real-time analytics</li>
+                            <li>KPI monitoring</li>
+                            <li>Visual reporting</li>
+                            <li>Smart alerts</li>
+                            <li>Faster business insights</li>
+                            <li>Better operational control</li>
+                        </ul>
+
+                        <h4 class="text-white font-bold text-lg">Where It's Used</h4>
+                        <ul class="list-disc pl-5 text-on-surface-variant text-sm space-y-1">
+                            <li>Construction analytics</li>
+                            <li>Finance tracking</li>
+                            <li>Sales monitoring</li>
+                            <li>Inventory systems</li>
+                            <li>Employee performance tracking</li>
+                            <li>AI reporting systems</li>
+                        </ul>
+
+                        <h4 class="text-white font-bold text-lg">Examples</h4>
+                        <ul class="list-disc pl-5 text-on-surface-variant text-sm space-y-1">
+                            <li>Estimate vs Actual dashboards</li>
+                            <li>Revenue dashboards</li>
+                            <li>Project tracking systems</li>
+                            <li>AI monitoring panels</li>
+                        </ul>
+                    </div>
+                `
+            },
+            'ai-chatbots': {
+                title: 'AI Chatbots',
+                icon: 'forum',
+                iconColor: 'text-primary-fixed-dim',
+                content: `
+                    <div class="space-y-4">
+                        <h4 class="text-white font-bold text-lg">What It Is</h4>
+                        <p class="text-on-surface-variant text-sm">AI-powered virtual assistants that interact with customers automatically.</p>
+                        
+                        <h4 class="text-white font-bold text-lg">Why Businesses Need It</h4>
+                        <ul class="list-disc pl-5 text-on-surface-variant text-sm space-y-1">
+                            <li>Instant customer support</li>
+                            <li>Reduces support workload</li>
+                            <li>Available 24/7</li>
+                        </ul>
+
+                        <h4 class="text-white font-bold text-lg">Benefits</h4>
+                        <ul class="list-disc pl-5 text-on-surface-variant text-sm space-y-1">
+                            <li>Human-like conversations</li>
+                            <li>Instant replies</li>
+                            <li>Lead generation</li>
+                            <li>Automated booking</li>
+                            <li>Multilingual support</li>
+                            <li>Higher customer satisfaction</li>
+                        </ul>
+
+                        <h4 class="text-white font-bold text-lg">Where It's Used</h4>
+                        <ul class="list-disc pl-5 text-on-surface-variant text-sm space-y-1">
+                            <li>Websites</li>
+                            <li>WhatsApp</li>
+                            <li>Facebook Messenger</li>
+                            <li>Customer support systems</li>
+                            <li>E-commerce stores</li>
+                            <li>Real estate agencies</li>
+                        </ul>
+
+                        <h4 class="text-white font-bold text-lg">Examples</h4>
+                        <ul class="list-disc pl-5 text-on-surface-variant text-sm space-y-1">
+                            <li>AI customer support</li>
+                            <li>FAQ bots</li>
+                            <li>Appointment assistants</li>
+                            <li>Sales chatbots</li>
+                        </ul>
+                    </div>
+                `
+            },
+            'api-integrations': {
+                title: 'API Integrations',
+                icon: 'api',
+                iconColor: 'text-secondary',
+                content: `
+                    <div class="space-y-4">
+                        <h4 class="text-white font-bold text-lg">What It Is</h4>
+                        <p class="text-on-surface-variant text-sm">Connecting different software systems and AI tools together for seamless automation.</p>
+                        
+                        <h4 class="text-white font-bold text-lg">Why Businesses Need It</h4>
+                        <ul class="list-disc pl-5 text-on-surface-variant text-sm space-y-1">
+                            <li>Businesses use multiple platforms</li>
+                            <li>Systems need to communicate automatically</li>
+                        </ul>
+
+                        <h4 class="text-white font-bold text-lg">Benefits</h4>
+                        <ul class="list-disc pl-5 text-on-surface-variant text-sm space-y-1">
+                            <li>Automated data syncing</li>
+                            <li>Faster workflows</li>
+                            <li>Centralized operations</li>
+                            <li>Improved productivity</li>
+                            <li>Reduced manual entry</li>
+                            <li>Better system connectivity</li>
+                        </ul>
+
+                        <h4 class="text-white font-bold text-lg">Where It's Used</h4>
+                        <ul class="list-disc pl-5 text-on-surface-variant text-sm space-y-1">
+                            <li>QuickBooks integrations</li>
+                            <li>CRM systems</li>
+                            <li>Payment gateways</li>
+                            <li>AI providers</li>
+                            <li>ERP systems</li>
+                            <li>Dashboard automation</li>
+                        </ul>
+
+                        <h4 class="text-white font-bold text-lg">Examples</h4>
+                        <ul class="list-disc pl-5 text-on-surface-variant text-sm space-y-1">
+                            <li>OpenAI integration</li>
+                            <li>Stripe payments</li>
+                            <li>WhatsApp API</li>
+                            <li>Google APIs</li>
+                            <li>QuickBooks automation</li>
+                            <li>CRM integrations</li>
+                        </ul>
+                    </div>
+                `
+            }
+        };
+
+        const serviceModal = document.getElementById('service-modal');
+        const serviceModalContentWrapper = document.getElementById('service-modal-content-wrapper');
+        const modalTitle = document.getElementById('modal-title');
+        const modalIcon = document.getElementById('modal-icon');
+        const modalBody = document.getElementById('modal-body');
+        const modalWhatsappBtn = document.getElementById('modal-whatsapp-btn');
+        const WHATSAPP_NUMBER = "923095383442"; // SET WHATSAPP NUMBER HERE
+
+        function openServiceModal(serviceKey) {
+            const data = servicesData[serviceKey];
+            if (!data) return;
+
+            modalTitle.innerText = data.title;
+            modalIcon.innerText = data.icon;
+            modalIcon.className = `material-symbols-outlined text-display-lg ${data.iconColor}`;
+            modalBody.innerHTML = data.content;
+
+            const text = encodeURIComponent(`Hello BA NEXORA AI, I'm interested in learning more about your ${data.title} services.`);
+            modalWhatsappBtn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+
+            serviceModal.classList.remove('opacity-0', 'pointer-events-none');
+            serviceModalContentWrapper.classList.remove('scale-95');
+            serviceModalContentWrapper.classList.add('scale-100');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeServiceModal() {
+            serviceModal.classList.add('opacity-0', 'pointer-events-none');
+            serviceModalContentWrapper.classList.remove('scale-100');
+            serviceModalContentWrapper.classList.add('scale-95');
+            document.body.style.overflow = '';
+        }
+
+        if (serviceModal) {
+            serviceModal.addEventListener('click', (e) => {
+                if (e.target === serviceModal) closeServiceModal();
+            });
+        }
+
+        const countryCodes = [
+            { code: "+92", name: "Pakistan", iso: "PK" },
+            { code: "+1", name: "United States", iso: "US" },
+            { code: "+1", name: "Canada", iso: "CA" },
+            { code: "+44", name: "United Kingdom", iso: "GB" },
+            { code: "+61", name: "Australia", iso: "AU" },
+            { code: "+971", name: "United Arab Emirates", iso: "AE" },
+            { code: "+966", name: "Saudi Arabia", iso: "SA" },
+            { code: "+91", name: "India", iso: "IN" },
+            { code: "+86", name: "China", iso: "CN" },
+            { code: "+49", name: "Germany", iso: "DE" },
+            { code: "+33", name: "France", iso: "FR" },
+            { code: "+39", name: "Italy", iso: "IT" },
+            { code: "+81", name: "Japan", iso: "JP" },
+            { code: "+7", name: "Russia", iso: "RU" },
+            { code: "+55", name: "Brazil", iso: "BR" },
+            { code: "+27", name: "South Africa", iso: "ZA" },
+            { code: "+31", name: "Netherlands", iso: "NL" },
+            { code: "+65", name: "Singapore", iso: "SG" },
+            { code: "+64", name: "New Zealand", iso: "NZ" },
+            { code: "+353", name: "Ireland", iso: "IE" },
+            { code: "+60", name: "Malaysia", iso: "MY" },
+            { code: "+62", name: "Indonesia", iso: "ID" },
+            { code: "+90", name: "Turkey", iso: "TR" },
+            { code: "+34", name: "Spain", iso: "ES" },
+            { code: "+41", name: "Switzerland", iso: "CH" },
+            { code: "+46", name: "Sweden", iso: "SE" },
+            { code: "+47", name: "Norway", iso: "NO" },
+            { code: "+45", name: "Denmark", iso: "DK" },
+            { code: "+358", name: "Finland", iso: "FI" },
+            { code: "+32", name: "Belgium", iso: "BE" },
+            { code: "+43", name: "Austria", iso: "AT" },
+            { code: "+351", name: "Portugal", iso: "PT" },
+            { code: "+30", name: "Greece", iso: "GR" },
+            { code: "+972", name: "Israel", iso: "IL" },
+            { code: "+82", name: "South Korea", iso: "KR" },
+            { code: "+66", name: "Thailand", iso: "TH" },
+            { code: "+84", name: "Vietnam", iso: "VN" },
+            { code: "+63", name: "Philippines", iso: "PH" },
+            { code: "+20", name: "Egypt", iso: "EG" },
+            { code: "+234", name: "Nigeria", iso: "NG" },
+            { code: "+254", name: "Kenya", iso: "KE" },
+            { code: "+212", name: "Morocco", iso: "MA" },
+            { code: "+52", name: "Mexico", iso: "MX" },
+            { code: "+54", name: "Argentina", iso: "AR" },
+            { code: "+56", name: "Chile", iso: "CL" },
+            { code: "+57", name: "Colombia", iso: "CO" },
+            { code: "+51", name: "Peru", iso: "PE" },
+            { code: "+58", name: "Venezuela", iso: "VE" },
+            { code: "+98", name: "Iran", iso: "IR" },
+            { code: "+964", name: "Iraq", iso: "IQ" },
+            { code: "+965", name: "Kuwait", iso: "KW" },
+            { code: "+968", name: "Oman", iso: "OM" },
+            { code: "+974", name: "Qatar", iso: "QA" },
+            { code: "+973", name: "Bahrain", iso: "BH" },
+            { code: "+962", name: "Jordan", iso: "JO" },
+            { code: "+961", name: "Lebanon", iso: "LB" },
+            { code: "+963", name: "Syria", iso: "SY" },
+            { code: "+967", name: "Yemen", iso: "YE" },
+            { code: "+93", name: "Afghanistan", iso: "AF" },
+            { code: "+880", name: "Bangladesh", iso: "BD" },
+            { code: "+94", name: "Sri Lanka", iso: "LK" },
+            { code: "+977", name: "Nepal", iso: "NP" },
+            { code: "+95", name: "Myanmar", iso: "MM" },
+            { code: "+855", name: "Cambodia", iso: "KH" },
+            { code: "+856", name: "Laos", iso: "LA" },
+            { code: "+976", name: "Mongolia", iso: "MN" },
+            { code: "+886", name: "Taiwan", iso: "TW" },
+            { code: "+380", name: "Ukraine", iso: "UA" },
+            { code: "+48", name: "Poland", iso: "PL" },
+            { code: "+420", name: "Czech Republic", iso: "CZ" },
+            { code: "+36", name: "Hungary", iso: "HU" },
+            { code: "+40", name: "Romania", iso: "RO" },
+            { code: "+359", name: "Bulgaria", iso: "BG" },
+            { code: "+385", name: "Croatia", iso: "HR" },
+            { code: "+381", name: "Serbia", iso: "RS" },
+            { code: "+421", name: "Slovakia", iso: "SK" },
+            { code: "+386", name: "Slovenia", iso: "SI" },
+            { code: "+370", name: "Lithuania", iso: "LT" },
+            { code: "+371", name: "Latvia", iso: "LV" },
+            { code: "+372", name: "Estonia", iso: "EE" },
+            { code: "+352", name: "Luxembourg", iso: "LU" },
+            { code: "+354", name: "Iceland", iso: "IS" },
+            { code: "+251", name: "Ethiopia", iso: "ET" },
+            { code: "+233", name: "Ghana", iso: "GH" },
+            { code: "+216", name: "Tunisia", iso: "TN" },
+            { code: "+213", name: "Algeria", iso: "DZ" },
+            { code: "+255", name: "Tanzania", iso: "TZ" },
+            { code: "+256", name: "Uganda", iso: "UG" },
+            { code: "+263", name: "Zimbabwe", iso: "ZW" },
+            { code: "+260", name: "Zambia", iso: "ZM" },
+            { code: "+244", name: "Angola", iso: "AO" },
+            { code: "+237", name: "Cameroon", iso: "CM" },
+            { code: "+221", name: "Senegal", iso: "SN" },
+            { code: "+225", name: "Ivory Coast", iso: "CI" },
+            { code: "+218", name: "Libya", iso: "LY" },
+            { code: "+249", name: "Sudan", iso: "SD" },
+            { code: "+264", name: "Namibia", iso: "NA" },
+            { code: "+267", name: "Botswana", iso: "BW" },
+            { code: "+266", name: "Lesotho", iso: "LS" },
+            { code: "+268", name: "Eswatini", iso: "SZ" },
+            { code: "+265", name: "Malawi", iso: "MW" },
+            { code: "+258", name: "Mozambique", iso: "MZ" },
+            { code: "+261", name: "Madagascar", iso: "MG" },
+            { code: "+230", name: "Mauritius", iso: "MU" },
+            { code: "+506", name: "Costa Rica", iso: "CR" },
+            { code: "+507", name: "Panama", iso: "PA" },
+            { code: "+502", name: "Guatemala", iso: "GT" },
+            { code: "+503", name: "El Salvador", iso: "SV" },
+            { code: "+504", name: "Honduras", iso: "HN" },
+            { code: "+505", name: "Nicaragua", iso: "NI" },
+            { code: "+593", name: "Ecuador", iso: "EC" },
+            { code: "+595", name: "Paraguay", iso: "PY" },
+            { code: "+598", name: "Uruguay", iso: "UY" },
+            { code: "+591", name: "Bolivia", iso: "BO" },
+            { code: "+509", name: "Haiti", iso: "HT" },
+            { code: "+501", name: "Belize", iso: "BZ" },
+            { code: "+592", name: "Guyana", iso: "GY" },
+            { code: "+597", name: "Suriname", iso: "SR" },
+            { code: "+376", name: "Andorra", iso: "AD" },
+            { code: "+378", name: "San Marino", iso: "SM" },
+            { code: "+379", name: "Vatican City", iso: "VA" },
+            { code: "+375", name: "Belarus", iso: "BY" },
+            { code: "+373", name: "Moldova", iso: "MD" },
+            { code: "+382", name: "Montenegro", iso: "ME" },
+            { code: "+389", name: "North Macedonia", iso: "MK" },
+            { code: "+356", name: "Malta", iso: "MT" },
+            { code: "+377", name: "Monaco", iso: "MC" },
+            { code: "+374", name: "Armenia", iso: "AM" },
+            { code: "+994", name: "Azerbaijan", iso: "AZ" },
+            { code: "+995", name: "Georgia", iso: "GE" },
+            { code: "+996", name: "Kyrgyzstan", iso: "KG" },
+            { code: "+992", name: "Tajikistan", iso: "TJ" },
+            { code: "+993", name: "Turkmenistan", iso: "TM" },
+            { code: "+998", name: "Uzbekistan", iso: "UZ" },
+            { code: "+991", name: "Kazakhstan", iso: "KZ" }
+        ];
+
+        function populateCountryCodes() {
+            const prefixSelect = document.getElementById('contact-phone-prefix');
+            if (!prefixSelect) return;
+
+            prefixSelect.innerHTML = "";
+
+            // Sort countries alphabetically
+            const sortedCodes = [...countryCodes].sort((a, b) => a.name.localeCompare(b.name));
+
+            // Get featured list (Pakistan & United States) without removing them from sorted list
+            const featuredIsos = ["PK", "US"];
+            let featured = [];
+            featuredIsos.forEach(iso => {
+                const c = countryCodes.find(item => item.iso === iso);
+                if (c) {
+                    featured.push(c);
+                }
+            });
+
+            featured.forEach(c => {
+                const opt = document.createElement('option');
+                opt.value = c.iso;
+                opt.text = `${c.code} (${c.name})`;
+                opt.className = "bg-surface-container-highest font-bold text-primary-container";
+                prefixSelect.appendChild(opt);
+            });
+
+            if (featured.length > 0) {
+                const sep = document.createElement('option');
+                sep.disabled = true;
+                sep.text = "────────────────";
+                sep.className = "bg-surface-container-highest text-outline/30";
+                prefixSelect.appendChild(sep);
+            }
+
+            sortedCodes.forEach(c => {
+                const opt = document.createElement('option');
+                opt.value = c.iso;
+                opt.text = `${c.code} (${c.name})`;
+                opt.className = "bg-surface-container-highest";
+                prefixSelect.appendChild(opt);
+            });
+        }
+
+        function guessCountryISO() {
+            try {
+                const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+                if (timezone.includes("Karachi")) return "PK";
+                if (timezone.includes("Kolkata") || timezone.includes("Calcutta")) return "IN";
+                if (timezone.includes("London")) return "GB";
+                if (timezone.includes("Dhaka")) return "BD";
+                if (timezone.includes("Dubai")) return "AE";
+                if (timezone.includes("Riyadh")) return "SA";
+                if (timezone.includes("Sydney") || timezone.includes("Melbourne") || timezone.includes("Brisbane")) return "AU";
+                if (timezone.includes("Toronto") || timezone.includes("Vancouver") || timezone.includes("Montreal")) return "CA";
+                if (timezone.includes("America")) return "US";
+
+                const lang = (navigator.language || "").toUpperCase();
+                if (lang.includes("-")) {
+                    return lang.split("-")[1];
+                }
+                return lang;
+            } catch (e) {
+                return "US";
+            }
+        }
+
+        function setSelectedPrefixByISO(iso) {
+            const prefixSelect = document.getElementById('contact-phone-prefix');
+            if (!prefixSelect || !iso) return;
+            const match = countryCodes.find(c => c.iso.toUpperCase() === iso.toUpperCase());
+            if (match) {
+                prefixSelect.value = match.iso;
+            }
+        }
+
+        async function autoSelectPrefix() {
+            // First set to local guess
+            const guessedIso = guessCountryISO();
+            setSelectedPrefixByISO(guessedIso);
+
+            // Fetch precise location via IP API
+            try {
+                const response = await fetch('https://ipapi.co/json/');
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data && data.country_code) {
+                        setSelectedPrefixByISO(data.country_code);
+                    }
+                }
+            } catch (e) {
+                // Keep local guess if fetch fails
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            populateCountryCodes();
+            autoSelectPrefix();
+        });
+
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('contact-name').value.trim();
+            const email = document.getElementById('contact-email').value.trim();
+            const phonePrefixIso = document.getElementById('contact-phone-prefix').value;
+            const country = countryCodes.find(c => c.iso === phonePrefixIso);
+            const phonePrefix = country ? country.code : "";
+            const phoneInput = document.getElementById('contact-phone').value.trim();
+            const scope = document.getElementById('contact-scope').value;
+            const message = document.getElementById('contact-message').value.trim();
+
+            const successMsg = document.getElementById('contact-success');
+            const errorMsg = document.getElementById('contact-error');
+            successMsg.classList.add('hidden');
+            errorMsg.classList.add('hidden');
+
+            // Validate that either email or phone is filled
+            if (!email && !phoneInput) {
+                errorMsg.innerText = "Please provide either an email address or a phone number so we can reach you.";
+                errorMsg.classList.remove('hidden');
+                return;
+            }
+
+            let fullPhone = "";
+            if (phoneInput) {
+                let cleanPhone = phoneInput;
+
+                // Strip leading '+' or '00' if they typed it
+                if (cleanPhone.startsWith('+')) {
+                    cleanPhone = cleanPhone.substring(1);
+                } else if (cleanPhone.startsWith('00')) {
+                    cleanPhone = cleanPhone.substring(2);
+                }
+
+                // Strip numeric country prefix if they repeated it (e.g., prefix was "+41" and they typed "41...")
+                const numericPrefix = phonePrefix.replace('+', '');
+                const tempClean = cleanPhone.trim();
+                if (tempClean.startsWith(numericPrefix)) {
+                    const remaining = tempClean.substring(numericPrefix.length).trim();
+                    const remainingDigits = remaining.replace(/\D/g, '');
+                    if (remainingDigits.length >= 3) {
+                        cleanPhone = remaining;
+                    }
+                }
+
+                // Strip leading zero if it exists in local formatting (e.g., "079..." -> "79...")
+                cleanPhone = cleanPhone.trim();
+                if (cleanPhone.startsWith('0')) {
+                    const remaining = cleanPhone.substring(1).trim();
+                    const remainingDigits = remaining.replace(/\D/g, '');
+                    if (remainingDigits.length >= 3) {
+                        cleanPhone = remaining;
+                    }
+                }
+
+                // Verify that the final string contains at least some digits
+                const digits = cleanPhone.replace(/\D/g, '');
+                if (digits.length < 3) {
+                    errorMsg.innerText = "Please enter a valid phone number.";
+                    errorMsg.classList.remove('hidden');
+                    return;
+                }
+
+                fullPhone = phonePrefix + " " + cleanPhone;
+            }
+
+            const newMessage = {
+                id: Date.now(),
+                name,
+                email,
+                phone: fullPhone,
+                scope,
+                message,
+                date: new Date().toLocaleString()
+            };
+
+            let messages = JSON.parse(localStorage.getItem('nexora_messages')) || [];
+            messages.push(newMessage);
+            localStorage.setItem('nexora_messages', JSON.stringify(messages));
+
+            document.getElementById('contact-form').reset();
+            autoSelectPrefix();
+            successMsg.classList.remove('hidden');
+            setTimeout(() => successMsg.classList.add('hidden'), 5000);
+        }
+    </script>
+</body>
+
+</html>

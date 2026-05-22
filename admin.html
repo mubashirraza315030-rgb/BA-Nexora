@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>BA NEXORA AI | Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <style>
+        body {
+            background-color: #000000;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col bg-[#131313] selection:bg-[#00e5ff] selection:text-[#00626e]">
+    <!-- Top Navigation -->
+    <header class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl border-b border-[#00e5ff]/20">
+        <nav class="flex justify-between items-center px-4 md:px-8 py-4 w-full mx-auto">
+            <div class="flex items-center gap-2">
+                <img src="assets/logo.png" alt="BA Nexora AI Logo" class="h-8 w-8 md:h-10 md:w-10 object-contain rounded-lg shadow-[0_0_10px_rgba(0,229,255,0.2)]">
+                <span class="font-['Space_Grotesk'] text-2xl tracking-tighter text-[#00e5ff] font-bold">NEXORA
+                    ADMIN</span>
+            </div>
+            <a href="index.html"
+                class="text-sm font-bold text-[#bac9cc] hover:text-[#00e5ff] transition-colors flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm">arrow_back</span> Return to Site
+            </a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 pt-24 pb-12 px-4 md:px-8 w-full mx-auto w-full">
+        <div class="flex justify-between items-end mb-8">
+            <div>
+                <h1 class="font-['Space_Grotesk'] text-3xl md:text-4xl text-white font-bold mb-2">Message Center</h1>
+                <p class="text-[#849396]">Review and manage incoming client communications.</p>
+            </div>
+            <button onclick="clearMessages()"
+                class="text-red-400 hover:text-red-300 font-bold text-sm flex items-center gap-1 transition-colors">
+                <span class="material-symbols-outlined text-sm">delete</span> Clear All
+            </button>
+        </div>
+
+        <div id="messages-container" class="grid grid-cols-1 gap-4">
+            <!-- Messages will be rendered here -->
+            <div class="glass-panel p-8 rounded-xl text-center text-[#849396] hidden" id="no-messages">
+                <span class="material-symbols-outlined text-4xl mb-2">inbox</span>
+                <p>No messages received yet.</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function loadMessages() {
+            const container = document.getElementById('messages-container');
+            const noMessages = document.getElementById('no-messages');
+
+            // Get messages from localStorage
+            let messages = JSON.parse(localStorage.getItem('nexora_messages')) || [];
+
+            // Remove all existing message cards before rendering
+            document.querySelectorAll('.message-card').forEach(card => card.remove());
+
+            if (messages.length === 0) {
+                noMessages.classList.remove('hidden');
+            } else {
+                noMessages.classList.add('hidden');
+
+                // Sort by date descending (newest first)
+                messages.sort((a, b) => b.id - a.id);
+
+                messages.forEach((msg, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'message-card glass-panel p-6 rounded-xl relative group';
+                    card.innerHTML = `
+  <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4 border-b border-white/10 pb-4">
+    <div>
+      <h3 class="text-xl font-bold text-white">${msg.name}</h3>
+      <div class="flex flex-wrap gap-x-4 gap-y-1 mt-1 text-sm">
+        ${msg.email ? `<a href="mailto:${msg.email}" class="text-[#00daf3] hover:underline flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">mail</span>${msg.email}</a>` : ''}
+        ${msg.phone ? `<a href="tel:${msg.phone}" class="text-[#00daf3] hover:underline flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">call</span>${msg.phone}</a>` : ''}
+      </div>
+    </div>
+    <div class="flex flex-row items-start gap-3 md:flex-col md:items-end">
+      <div class="flex items-center gap-2">
+        <span class="bg-[#00e5ff]/20 text-[#00e5ff] text-xs font-bold px-3 py-1 rounded-full border border-[#00e5ff]/30">${msg.scope}</span>
+        <button onclick="deleteMessage(${msg.id})" class="text-[#849396] hover:text-red-400 hover:bg-red-400/10 rounded-lg p-1 transition-all" title="Delete">
+          <span class="material-symbols-outlined text-[18px]">delete</span>
+        </button>
+      </div>
+      <span class="text-xs text-[#849396]">${msg.date}</span>
+    </div>
+  </div>
+  <p class="text-[#e5e2e1] whitespace-pre-wrap">${msg.message}</p>
+`;
+                    container.appendChild(card);
+                });
+            }
+        }
+
+        function deleteMessage(id) {
+            if (confirm('Are you sure you want to delete this message?')) {
+                let messages = JSON.parse(localStorage.getItem('nexora_messages')) || [];
+                messages = messages.filter(msg => msg.id !== id);
+                localStorage.setItem('nexora_messages', JSON.stringify(messages));
+                loadMessages();
+            }
+        }
+
+        function clearMessages() {
+            if (confirm('Are you sure you want to delete ALL messages? This cannot be undone.')) {
+                localStorage.removeItem('nexora_messages');
+                loadMessages();
+            }
+        }
+
+        // Initialize
+        loadMessages();
+    </script>
+</body>
+
+</html>
